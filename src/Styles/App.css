@@ -1,16 +1,32 @@
 #root {
-    max-width: 1440px;
+    /* max-width: 1440px; */
     margin: 0 auto;
     /* padding: 2rem;
     text-align: center; */
 }
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @font-face {
-    font-family: barato;
-    src: url(/honchokomono-italic-bold.otf);
+    font-family: gotham;
+    src: url('/honchokomono-italic-bold.otf') format('opentype');
+    font-style: italic;
+}
+@font-face {
+    font-family: gotham;
+    src: url('/honchokomono-nomal-bold.otf') format('opentype');
+    font-style: normal;
 }
 body {
     margin: 0 auto;
-    font-family: 'barato', sans-serif;
+    font-family: 'Kanit', sans-serif;
+    /* font-style: italic; */
+}
+button {
+    font-family: 'Kanit', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+}
+label {
+    font-weight: bold;
 }
 .logo {
     height: 6em;
@@ -48,5 +64,9 @@ body {
     color: #888;
 }
 .background {
-    @apply bg-[url('/images/background/bg1.png')] bg-cover bg-left-top;
+    @apply bg-[url('/images/background/bg1.png')]  bg-left-top w-screen h-screen bg-cover;
+}
+.swal2-popup {
+    font-family: 'Gotham', sans-serif !important;
+    font-style: italic;
 }

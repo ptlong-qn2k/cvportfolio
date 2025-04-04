@@ -4,9 +4,9 @@ import Header from '../Components/Header';
 
 function Layout({ children }) {
     return (
-        <div className="w-full h-screen background">
+        <div className="w-full h-screen background ">
             <Header />
-            <div>{children}</div>
+            <div className="">{children}</div>
         </div>
     );
 }

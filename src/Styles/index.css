@@ -41,7 +41,7 @@ h1 {
 button {
     border-radius: 8px;
     border: 1px solid transparent;
-    padding: 0.6em 1.2em;
+    padding: 5px 5px;
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
@@ -50,11 +50,19 @@ button {
     transition: border-color 0.25s;
 }
 button:hover {
-    border-color: #646cff;
+    background-color: #af4887;
+}
+button:focus {
+    background: mediumaquamarine;
 }
 button:focus,
+button:active {
+    outline: 1px solid rebeccapurple;
+    background: mediumaquamarine;
+}
 button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
+    background-color: #5a1212;
 }
 
 @media (prefers-color-scheme: light) {
