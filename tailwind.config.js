@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+    darkMode: 'class', // <== Quan trọng
     content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
     theme: {
         extend: {
@@ -18,18 +19,10 @@ export default {
             },
         },
         screens: {
-            xl: { max: '1300px' },
-            // => @media (max-width: 1279px) { ... }
-
-            lg: { max: '900px' },
-            // => @media (max-width: 1023px) { ... }
-
-            md: { max: '768px' },
-            mdpc: { min: '376px' },
-            // => @media (max-width: 767px) { ... }
-
-            sm: { max: '550px' },
-            // => @media (max-width: 639px) { ... }
+            sm: { min: '550px' },
+            md: { min: '768px' },
+            lg: { min: '900px' },
+            xl: { min: '1300px' },
         },
     },
     plugins: [],

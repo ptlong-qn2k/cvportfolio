@@ -29,10 +29,10 @@ function TechStack() {
     return (
         <Layout>
             <div className="flex justify-center my-5">
-                <div className="grid grid-cols-6 grid-rows-2 gap-5">
+                <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
                     {techstackIcon.map((data, index) => (
                         <div key={index} className="flex flex-col justify-center items-center">
-                            <div key={index} className="flex w-20 h-20 justify-center items-center mb-[-20px]">
+                            <div className="flex w-20 h-20 justify-center items-center mb-[-20px]">
                                 {React.cloneElement(data.icon, { className: `w-16 h-16 ${data.color}` })}
                             </div>
                             {/* <h3 className="text-xl">{data.title}</h3> */}

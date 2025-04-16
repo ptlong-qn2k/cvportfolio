@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import '../Styles/App.css';
 import { translations } from '../Components/Content';
-import { useLanguage } from '../Components/Languagecontext';
+import { useLanguage } from '../Service/Languagecontext';
 
 function Contact() {
     const {

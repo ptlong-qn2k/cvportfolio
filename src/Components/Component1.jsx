@@ -1,12 +1,12 @@
 import { FaPhoneAlt } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
-import { useLanguage } from './Languagecontext';
+import { useLanguage } from '../Service/Languagecontext';
 import { translations } from './Content';
 
 export default function Component1() {
     const { language } = useLanguage();
     return (
-        <div className="flex flex-col text-xl font-bold">
+        <div className="flex flex-col text-xl font-bold pt-[60px]">
             <div className="flex flex-row mx-auto px-5 items-center pt-10  ">
                 <img src="/images/background/long.png" className="w-[250px] h-[250px] mr-10" />
                 <div className="flex flex-col uppercase w-[550px]  ">
@@ -14,7 +14,7 @@ export default function Component1() {
                     <span className="text-orange whitespace-nowrap text-maupurple">
                         {translations[language].home.name}
                     </span>
-                    <span className="text-maucam w-[700px]">{translations[language].home.description}</span>
+                    <span className="text-maucam ">{translations[language].home.description}</span>
                 </div>
             </div>
             <div className="flex flex-row mx-auto mt-10">

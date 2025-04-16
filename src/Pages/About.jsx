@@ -1,5 +1,5 @@
 import Layout from './Layout';
-import { useLanguage } from '../Components/Languagecontext';
+import { useLanguage } from '../Service/Languagecontext';
 import { translations } from '../Components/Content';
 
 const About = () => {
@@ -18,7 +18,7 @@ const About = () => {
     const { language } = useLanguage();
     return (
         <Layout>
-            <div className="flex flex-col justify-center px-[200px] pt-[10px] text-2xl">
+            <div className="flex flex-col justify-center px-10 pt-[10px]">
                 <div className="">
                     <label htmlFor="BACKGROUND/CAREER OBJECTIVES" className="relative right-10">
                         {translations[language].about.background.label}
