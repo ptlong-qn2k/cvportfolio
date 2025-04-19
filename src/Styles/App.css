@@ -80,18 +80,18 @@ label {
     font-style: italic;
 }
 .scroll-preview {
-    width: 373px; /* Chiều rộng hiển thị ảnh */
+    width: 100%; /* Chiều rộng hiển thị ảnh */
     height: 250px; /* Chiều cao khung nhìn */
     overflow: hidden;
     position: relative;
 }
 
 .scroll-preview img {
-    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     animation: scrollImage 10s linear infinite;
-    top: 100%;
-    left: 0;
 }
 
 @keyframes scrollImage {

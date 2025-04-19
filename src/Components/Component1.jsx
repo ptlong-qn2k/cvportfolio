@@ -8,7 +8,7 @@ export default function Component1() {
     return (
         <div className="flex flex-col text-lg font-bold pt-[60px]">
             <div className="flex flex-col items-center sm:flex-row mx-auto sm:px-5 pt-10  ">
-                <img src="/images/background/long.png" className="w-[250px] h-[250px] sm:mr-10" />
+                <img src="/images/background/long.png" className="w-[250px] h-[250px] sm:mr-10 hover:scale-110" />
                 <div className="flex flex-col uppercase  ">
                     <span className="hidden sm:flex">{translations[language].home.title}</span>
                     <span className="sm:whitespace-nowrap text-maupurple">{translations[language].home.name}</span>

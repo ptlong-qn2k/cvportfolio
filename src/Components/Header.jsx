@@ -5,7 +5,7 @@ import { SiDungeonsanddragons } from 'react-icons/si';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useLanguage } from '../Service/Languagecontext';
 import { header } from './Content';
-import Menutoogle from '../Service/menu';
+import Menutoogle from '../Service/Menutoogle';
 import { Menu, MenuItem, Button, ListItemIcon, ListItemText } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ThemeToggle from '../Service/Themetoggle';
@@ -29,20 +29,24 @@ function Header() {
     };
 
     const handleClose = (langCode) => {
-        if (langCode) toggleLanguage(langCode);
         setAnchorEl(null);
-        const [, , ...rest] = location.pathname.split('/');
-        const newPath = `/${langCode}/${rest.join('/')}`;
-
-        toggleLanguage(langCode);
+        if (!langCode) {
+            return;
+        } else {
+            toggleLanguage(langCode);
+        }
+        // const segments = location.pathname.split('/').filter(Boolean);
+        // const rest = segments.slice(1); // bỏ langCode hiện tại (ở index 0)
+        const [, ...rest] = location.pathname.split('/').filter(Boolean);
+        const newPath = `/${langCode}${rest.length ? '/' + rest.join('/') : ''}`;
         navigate(newPath);
     };
 
     return (
         <>
-            <div className="fixed top-0 left-0 w-full z-50 transition-all duration-300 backdrop-blur-lg shadow-md dark:shadow-[0_4px_30px_-10px_rgba(139,92,246,0.3)]  px-5 flex flex-row items-center justify-between font-bold">
+            <div className="fixed top-0 left-0 w-full z-50 transition-all duration-300 backdrop-blur-lg shadow-md dark:shadow-[0_4px_30px_-10px_rgba(139,92,246,0.3)] px-5 flex flex-row items-center justify-between font-bold">
                 <SiDungeonsanddragons className="dark:text-maudo w-[60px] h-[60px]" />
-                <div className="flex flex-row gap-5 items-center">
+                <div className="flex flex-row gap-2 items-center">
                     <div className="hidden md:flex flex-row justify-center items-center gap-x-5 whitespace-nowrap ">
                         <h3
                             onClick={() => navigate(`/${language}`)}
@@ -110,6 +114,7 @@ function Header() {
                             )}
                         </Button>
                         <Menu
+                            disableScrollLock
                             sx={{
                                 textTransform: 'none',
                                 fontSize: '14px',
@@ -154,7 +159,7 @@ function Header() {
                         </Menu>
                         <ThemeToggle />
                     </div>
-                    <Menutoogle className="md:hidden"></Menutoogle>
+                    <Menutoogle />
                 </div>
             </div>
         </>

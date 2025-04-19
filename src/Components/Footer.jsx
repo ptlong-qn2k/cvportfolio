@@ -19,6 +19,8 @@ const Footer = () => {
     const myGithub = (url) => {
         window.open(url, '_blank');
     };
+    const goToPage = (page) => navigate(`/${language}/${page}`);
+
     return (
         <>
             <div className="grid grid-cols-3 gap-5 mt-5 py-10 ">
@@ -38,7 +40,7 @@ const Footer = () => {
                             {header[language].home}
                         </h3>
                         <h3
-                            onClick={() => navigate('/about')}
+                            onClick={() => goToPage('about')}
                             className={`cursor-pointer card-hover px-[4px] py-[2px] ${
                                 location.pathname === '/about' ? 'menu-active' : 'text-xanhduong'
                             }`}
@@ -46,7 +48,7 @@ const Footer = () => {
                             {header[language].about}
                         </h3>
                         <h3
-                            onClick={() => navigate('/techstack')}
+                            onClick={() => goToPage('techstack')}
                             className={`cursor-pointer card-hover px-[4px] py-[2px] ${
                                 location.pathname === '/techstack' ? 'menu-active' : 'text-mauvang'
                             }`}
@@ -54,7 +56,7 @@ const Footer = () => {
                             {header[language].techStack}
                         </h3>
                         <h3
-                            onClick={() => navigate('/project')}
+                            onClick={() => goToPage('project')}
                             className={`cursor-pointer card-hover px-[4px] py-[2px] ${
                                 location.pathname === '/project' ? 'menu-active' : 'text-maucam'
                             }`}
@@ -62,7 +64,7 @@ const Footer = () => {
                             {header[language].projects}
                         </h3>
                         <h3
-                            onClick={() => navigate('/contact')}
+                            onClick={() => goToPage('contact')}
                             className={`cursor-pointer card-hover px-[4px] py-[2px] ${
                                 location.pathname === '/contact' ? 'menu-active' : 'text-xanhla'
                             }`}

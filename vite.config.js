@@ -7,4 +7,7 @@ export default defineConfig({
     server: {
         port: 5620,
     },
+    build: {
+        outDir: 'build', // Đổi từ 'dist' thành 'build'
+    },
 });

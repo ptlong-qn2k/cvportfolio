@@ -16,11 +16,15 @@ function Projects() {
                     return (
                         <div
                             key={index}
-                            className="w-[373px] h-[600px] flex flex-col items-center rounded-[10px] overflow-hidden border-2"
+                            className="w-[373px] relative flex flex-col items-center rounded-[10px] overflow-hidden border-2"
                         >
                             {/* <img src={data.URL} alt="" className=" object-cover" /> */}
-                            <div className={`${data.scroll == 'true' ? 'scroll-preview' : 'w-full h-[250px] '} `}>
-                                <img src={data.URL} alt={data.title} className="w-full  object-cover" />
+                            <div
+                                className={`relative ${
+                                    data.scroll == 'true' ? 'scroll-preview' : 'w-full h-[250px] ove'
+                                } `}
+                            >
+                                <img src={data.URL} alt={data.title} className="w-full absolute  object-cover" />
                                 <div className="w-full flex flex-row justify-end items-center pr-5 z-10 relative bottom-[50px] mb-[-50px] gap-3 ">
                                     {data.image.map((data1, indx) => {
                                         // console.log(data1);
@@ -34,7 +38,7 @@ function Projects() {
                             </div>
                             <div className="w-full px-5 text-left ">
                                 <h2 className="text-xl font-bold text-center ">{data.title}</h2>
-                                <ul className="list-disc pl-5 text-sm mb-2">
+                                <ul className="list-disc pl-5 min-h-[300px] text-sm mb-2">
                                     {data.content.map((line, idx) => (
                                         <li key={idx} className="mb-1">
                                             {line}
