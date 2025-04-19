@@ -19,6 +19,7 @@ export default {
             },
         },
         screens: {
+            mobile: { min: '375px' },
             sm: { min: '550px' },
             md: { min: '768px' },
             lg: { min: '900px' },

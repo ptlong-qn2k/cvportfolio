@@ -2,7 +2,7 @@ import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './Styles/App.css';
-import { Routes, Route, useParams } from 'react-router-dom';
+import { Routes, Route, useParams, Navigate } from 'react-router-dom';
 import { Homepage } from './Homepage';
 import About from './Pages/About';
 import TechStack from './Pages/TechStack';
@@ -18,12 +18,13 @@ function App() {
         <LanguageProvider>
             <ThemeProvider>
                 <Routes>
-                    <Route path="/" element={<Homepage />}></Route>
-                    <Route path="/about" element={<About />}></Route>
-                    <Route path="/techstack" element={<TechStack />}></Route>
-                    <Route path="/contact" element={<Contact />}></Route>
-                    <Route path="/project" element={<Projects />}></Route>
-                    <Route path="/login" element={<Login />}></Route>
+                    <Route path="/" element={<Navigate to="/en" replace />} />
+                    <Route path="/:lang" element={<Homepage />}></Route>
+                    <Route path="/:lang/about" element={<About />}></Route>
+                    <Route path="/:lang/techstack" element={<TechStack />}></Route>
+                    <Route path="/:lang/contact" element={<Contact />}></Route>
+                    <Route path="/:lang/project" element={<Projects />}></Route>
+                    <Route path="/:lang/login" element={<Login />}></Route>
                 </Routes>
             </ThemeProvider>
         </LanguageProvider>

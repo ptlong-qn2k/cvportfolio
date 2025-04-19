@@ -88,9 +88,9 @@ const Footer = () => {
             <hr className=" border-black w-full mx-auto mb-5" />
             <div className="flex flex-row justify-between items-center pb-5">
                 <p>2025 cv @Portfolio Pham Thanh Long</p>
-                <div className="flex flex-row justify-between gap-3">
+                <div className="flex flex-row justify-between items-center gap-3">
                     Front-end Developer | Da Nang, Vietnam
-                    <img src={'/images/header/vn.png'} className="h-6" alt="" />
+                    <img src={'/images/header/vn.png'} className="h-6 hidden sm:block" alt="" />
                 </div>
             </div>
         </>

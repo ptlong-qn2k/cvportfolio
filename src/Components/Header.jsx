@@ -1,11 +1,11 @@
 import React from 'react';
 import { FaFacebook } from 'react-icons/fa';
 import { FaGithubSquare } from 'react-icons/fa';
-import { SiGmail } from 'react-icons/si';
 import { SiDungeonsanddragons } from 'react-icons/si';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useLanguage } from '../Service/Languagecontext';
 import { header } from './Content';
+import Menutoogle from '../Service/menu';
 import { Menu, MenuItem, Button, ListItemIcon, ListItemText } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ThemeToggle from '../Service/Themetoggle';
@@ -19,68 +19,67 @@ function Header() {
     };
 
     const navigate = useNavigate();
-    // const aboutpage = () => {
-    //     console.log('da nhan nut');
-    //     navigate('/about');
-    // };
+    const location = useLocation();
     const { language, toggleLanguage } = useLanguage();
-
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
 
-    const handleClick = (event) => {
+    const languageClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
 
     const handleClose = (langCode) => {
         if (langCode) toggleLanguage(langCode);
         setAnchorEl(null);
-    };
+        const [, , ...rest] = location.pathname.split('/');
+        const newPath = `/${langCode}/${rest.join('/')}`;
 
-    const location = useLocation();
+        toggleLanguage(langCode);
+        navigate(newPath);
+    };
 
     return (
         <>
             <div className="fixed top-0 left-0 w-full z-50 transition-all duration-300 backdrop-blur-lg shadow-md dark:shadow-[0_4px_30px_-10px_rgba(139,92,246,0.3)]  px-5 flex flex-row items-center justify-between font-bold">
-                <SiDungeonsanddragons className="dark:text-white w-[60px] h-[60px]" />
-                <div className="flex flex-row gap-5">
+                <SiDungeonsanddragons className="dark:text-maudo w-[60px] h-[60px]" />
+                <div className="flex flex-row gap-5 items-center">
                     <div className="hidden md:flex flex-row justify-center items-center gap-x-5 whitespace-nowrap ">
                         <h3
-                            onClick={() => navigate('/')}
+                            onClick={() => navigate(`/${language}`)}
                             className={`cursor-pointer card-hover px-[4px] py-[2px] ${
-                                location.pathname === '/' ? 'menu-active' : 'text-maudo'
+                                location.pathname === `/${language}` ? 'menu-active' : 'text-maudo'
                             }`}
                         >
                             {header[language].home}
                         </h3>
                         <h3
-                            onClick={() => navigate('/about')}
+                            onClick={() => navigate(`/${language}/about`)}
                             className={`cursor-pointer card-hover px-[4px] py-[2px] ${
-                                location.pathname === '/about' ? 'menu-active' : 'text-xanhduong'
+                                location.pathname === `/${language}/about` ? 'menu-active' : 'text-xanhduong'
                             }`}
                         >
                             {header[language].about}
                         </h3>
                         <h3
-                            onClick={() => navigate('/techstack')}
+                            onClick={() => navigate(`/${language}/techstack`)}
                             className={`cursor-pointer card-hover px-[4px] py-[2px] ${
-                                location.pathname === '/techstack' ? 'menu-active' : 'text-mauvang'
+                                location.pathname === `/${language}/techstack` ? 'menu-active' : 'text-mauvang'
                             }`}
                         >
                             {header[language].techStack}
                         </h3>
                         <h3
-                            onClick={() => navigate('/project')}
+                            onClick={() => navigate(`/${language}/project`)}
                             className={`cursor-pointer card-hover px-[4px] py-[2px] ${
-                                location.pathname === '/project' ? 'menu-active' : 'text-maucam'
+                                location.pathname === `/${language}/project` ? 'menu-active' : 'text-maucam'
                             }`}
                         >
                             {header[language].projects}
                         </h3>
                         <h3
-                            onClick={() => navigate('/contact')}
+                            onClick={() => navigate(`/${language}/contact`)}
                             className={`cursor-pointer card-hover px-[4px] py-[2px] ${
-                                location.pathname === '/contact' ? 'menu-active' : 'text-xanhla'
+                                location.pathname === `/${language}/contact` ? 'menu-active' : 'text-xanhla'
                             }`}
                         >
                             {header[language].contact}
@@ -98,7 +97,7 @@ function Header() {
                     </div>
                     <div className="flex flex-row justify-center gap-2 ">
                         <Button
-                            onClick={handleClick}
+                            onClick={languageClick}
                             variant="outlined"
                             endIcon={<ExpandMoreIcon />}
                             sx={{ textTransform: 'none', fontSize: '16px', padding: 0 }}
@@ -111,7 +110,6 @@ function Header() {
                             )}
                         </Button>
                         <Menu
-                            disableTypography
                             sx={{
                                 textTransform: 'none',
                                 fontSize: '14px',
@@ -122,6 +120,7 @@ function Header() {
                             anchorEl={anchorEl}
                             open={open}
                             onClose={() => handleClose()}
+                            className="z-50"
                         >
                             <MenuItem
                                 sx={{
@@ -155,6 +154,7 @@ function Header() {
                         </Menu>
                         <ThemeToggle />
                     </div>
+                    <Menutoogle className="md:hidden"></Menutoogle>
                 </div>
             </div>
         </>
