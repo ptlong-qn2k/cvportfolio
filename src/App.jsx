@@ -1,6 +1,3 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './Styles/App.css';
 import { Routes, Route, useParams, Navigate } from 'react-router-dom';
 import { Homepage } from './Homepage';
@@ -9,14 +6,15 @@ import TechStack from './Pages/TechStack';
 import Contact from './Pages/Contact';
 import Projects from './Pages/Projects';
 import Login from './Pages/Login';
-import { LanguageProvider } from './Service/Languagecontext';
-import { ThemeProvider } from './Service/ThemeContext';
+import { LanguageProvider } from './Hook/Languagecontext';
+import { ThemeProvider } from './Hook/ThemeContext';
+import ScrollToTop from './Hook/ScrollToTop';
+import NotFound from './Pages/NotFound';
 function App() {
-    const [count, setCount] = useState(0);
-
     return (
         <LanguageProvider>
             <ThemeProvider>
+                <ScrollToTop />
                 <Routes>
                     <Route path="/" element={<Navigate to="/en" replace />} />
                     <Route path="/:lang" element={<Homepage />}></Route>
@@ -25,6 +23,8 @@ function App() {
                     <Route path="/:lang/contact" element={<Contact />}></Route>
                     <Route path="/:lang/project" element={<Projects />}></Route>
                     <Route path="/:lang/login" element={<Login />}></Route>
+                    {/* Bắt tất cả route không khớp => NotFound */}
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </ThemeProvider>
         </LanguageProvider>

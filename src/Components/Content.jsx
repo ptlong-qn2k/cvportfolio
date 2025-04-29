@@ -1,12 +1,6 @@
-import { FaHtml5 } from 'react-icons/fa';
-import { FaCss3 } from 'react-icons/fa';
-import { SiJavascript, SiVite } from 'react-icons/si';
-import { FaReact } from 'react-icons/fa';
-import { SiTailwindcss } from 'react-icons/si';
-import { FaSass } from 'react-icons/fa';
-import { FaGitAlt } from 'react-icons/fa';
+import { FaHtml5, FaCss3, FaReact, FaSass, FaGitAlt, FaGithub } from 'react-icons/fa';
+import { SiJavascript, SiVite, SiTailwindcss } from 'react-icons/si';
 import { BiLogoVisualStudio } from 'react-icons/bi';
-import { FaGithub } from 'react-icons/fa';
 
 const header = {
     en: {
@@ -37,6 +31,9 @@ const translations = {
         },
         about: {
             background: {
+                header: 'Learn more about my experience and background',
+                apply: 'Front-end developer',
+                address: 'Da Nang city, Viet Nam',
                 label: 'BACKGROUND/CAREER OBJECTIVES :',
                 content: [
                     `Hello! I'm Pham Thanh Long, a Fresher Front-end Developer with a passion for building modern and
@@ -121,6 +118,9 @@ const translations = {
         },
         about: {
             background: {
+                apply: 'Lập trình viên Front-end',
+                address: 'Thành phố Đà Nẵng, Việt Nam',
+                header: 'Tìm hiểu thêm về kinh nghiệm và nền tảng của tôi',
                 label: 'QUÁ TRÌNH PHÁT TRIỂN/MỤC TIÊU NGHỀ NGHIỆP:',
                 content: [
                     'Xin chào! Tôi là Phạm Thanh Long, một Fresher Front-end  Developer với niềm đam mê xây dựng giao diện web hiện đại và thân thiện với người dùng. Tôi có kinh nghiệm làm việc với ReactJS, JavaScript (ES6+), Tailwind CSS và RESTful APIs.',

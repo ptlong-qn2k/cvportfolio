@@ -1,6 +1,6 @@
 // src/components/ThemeToggle.jsx
 import { useContext, useState, useEffect, useRef, useCallback } from 'react';
-import { ThemeContext } from './ThemeContext';
+import { ThemeContext } from '../../Hook/ThemeContext';
 export default function ThemeToggle() {
     const { theme, setTheme } = useContext(ThemeContext);
     const [open, setOpen] = useState(false);

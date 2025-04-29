@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { header } from '../Components/Content';
+import { header } from '../Content';
 import { IoMenu } from 'react-icons/io5';
-import { useLanguage } from './Languagecontext';
+import { useLanguage } from '../../Hook/Languagecontext';
 import { useNavigate } from 'react-router-dom';
 const Menutoogle = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +31,7 @@ const Menutoogle = () => {
     }, [isOpen]);
 
     return (
-        <div ref={menuRef} onClick={toggleMenu} className={`sm:hidden`}>
+        <div ref={menuRef} onClick={toggleMenu} className={`md:hidden`}>
             <div>
                 <IoMenu size={32} className="cursor-pointer bg-gray-200 dark:bg-gray-700" />
             </div>

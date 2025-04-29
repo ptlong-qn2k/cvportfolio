@@ -1,14 +1,12 @@
-import React from 'react';
-import { FaFacebook } from 'react-icons/fa';
-import { FaGithubSquare } from 'react-icons/fa';
+import React, { useEffect } from 'react';
 import { SiDungeonsanddragons } from 'react-icons/si';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useLanguage } from '../Service/Languagecontext';
+import { useLanguage } from '../Hook/Languagecontext';
 import { header } from './Content';
-import Menutoogle from '../Service/Menutoogle';
+import Menutoogle from './Common/Menutoogle';
 import { Menu, MenuItem, Button, ListItemIcon, ListItemText } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ThemeToggle from '../Service/Themetoggle';
+import ThemeToggle from './Common/Themetoggle';
 
 function Header() {
     const myFb = (url) => {
@@ -27,6 +25,14 @@ function Header() {
     const languageClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
+    //dùng kiểm tra ngôn ngữ khi nhập link
+    useEffect(() => {
+        const langFromUrl = location.pathname.split('/')[1];
+        // console.log(langFromUrl);
+        if (langFromUrl && langFromUrl !== language) {
+            toggleLanguage(langFromUrl);
+        }
+    }, [location.pathname, language, toggleLanguage]);
 
     const handleClose = (langCode) => {
         setAnchorEl(null);
@@ -45,7 +51,13 @@ function Header() {
     return (
         <>
             <div className="fixed top-0 left-0 w-full z-50 transition-all duration-300 backdrop-blur-lg shadow-md dark:shadow-[0_4px_30px_-10px_rgba(139,92,246,0.3)] px-5 flex flex-row items-center justify-between font-bold">
-                <SiDungeonsanddragons className="dark:text-maudo w-[60px] h-[60px]" />
+                <div
+                    className="min-h-[60px] flex flex-col justify-center items-center opacity-50 dark:text-maudo cursor-pointer"
+                    onClick={() => navigate(`/${language}`)}
+                >
+                    <SiDungeonsanddragons className=" min-w-8 min-h-8 " />
+                    <p className="text-[8px]">ptl2k</p>
+                </div>
                 <div className="flex flex-row gap-2 items-center">
                     <div className="hidden md:flex flex-row justify-center items-center gap-x-5 whitespace-nowrap ">
                         <h3

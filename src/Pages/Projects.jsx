@@ -1,6 +1,6 @@
-import Layout from './Layout';
-import { translations } from '../Components/Content';
-import { useLanguage } from '../Service/Languagecontext';
+import Layout from '../Layout/Layout';
+import { translations } from '../Locals/LanguageContent';
+import { useLanguage } from '../Hook/Languagecontext';
 import { FaLink } from 'react-icons/fa6';
 import { FaGithub } from 'react-icons/fa';
 
@@ -9,27 +9,25 @@ function Projects() {
 
     return (
         <Layout>
-            <div className=" flex flex-row gap-x-5 justify-center">
+            <div className=" flex flex-col items-center pt-5 md:flex-row gap-5 md:justify-center">
                 {translations?.[language]?.projects?.items?.map((data, index) => {
                     // console.log(typeof data.content);
 
                     return (
                         <div
                             key={index}
-                            className="w-[373px] relative flex flex-col items-center rounded-[10px] overflow-hidden border-2"
+                            className="w-[373px] xl:w-[550px] relative flex flex-col items-center rounded-[10px] overflow-hidden border-2"
                         >
                             {/* <img src={data.URL} alt="" className=" object-cover" /> */}
                             <div
-                                className={`relative ${
-                                    data.scroll == 'true' ? 'scroll-preview' : 'w-full h-[250px] ove'
-                                } `}
+                                className={`relative ${data.scroll == 'true' ? 'scroll-preview' : 'w-full h-[250px]'} `}
                             >
                                 <img src={data.URL} alt={data.title} className="w-full absolute  object-cover" />
-                                <div className="w-full flex flex-row justify-end items-center pr-5 z-10 relative bottom-[50px] mb-[-50px] gap-3 ">
+                                <div className="w-full flex flex-row justify-end items-center pr-5 z-20 relative top-[120px] xl:top-[180px] mb-[-50px] gap-3 ">
                                     {data.image.map((data1, indx) => {
                                         // console.log(data1);
                                         return (
-                                            <div key={indx} className="w-14 h-full">
+                                            <div key={indx} className="w-14 xl:w-20 h-full">
                                                 <img className="" src={data1} alt="" />
                                             </div>
                                         );
@@ -37,7 +35,7 @@ function Projects() {
                                 </div>
                             </div>
                             <div className="w-full px-5 text-left ">
-                                <h2 className="text-xl font-bold text-center ">{data.title}</h2>
+                                <h2 className="text-xl font-bold text-center whitespace-nowrap ">{data.title}</h2>
                                 <ul className="list-disc pl-5 min-h-[300px] text-sm mb-2">
                                     {data.content.map((line, idx) => (
                                         <li key={idx} className="mb-1">

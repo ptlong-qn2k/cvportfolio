@@ -17,6 +17,22 @@ export default {
                 maudo: '#FF1C03',
                 gray_cus: '#FAFAFA',
             },
+            keyframes: {
+                'slide-in-left': {
+                    '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                    '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+
+                'fade-in': {
+                    '0%': { opacity: '0', transform: 'translateX(20px)' },
+                    '100%': { opacity: '1', transform: 'translateX(0)' },
+                },
+            },
+            animation: {
+                'slide-in-left': 'slide-in-left 1s ease-out forwards',
+
+                'fade-in': 'fade-in 0.6s ease-out forwards',
+            },
         },
         screens: {
             mobile: { min: '375px' },

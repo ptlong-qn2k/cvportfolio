@@ -7,7 +7,8 @@ export default defineConfig({
     server: {
         port: 5620,
     },
+    // base: '/cvportfolio/',
     build: {
-        outDir: 'build', // Đổi từ 'dist' thành 'build'
+        outDir: 'dist', // Đổi từ 'dist' thành 'build'
     },
 });
