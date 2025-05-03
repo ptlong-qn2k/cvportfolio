@@ -133,6 +133,14 @@ label {
     box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4); /* bóng nhẹ xanh */
     transition: all 0.3s ease;
 }
+.dark .ui1 {
+    border: 2px solid black;
+}
+.ui1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4); /* bóng nhẹ xanh */
+    transition: all 0.3s ease;
+}
 .menu-link {
     text-decoration: none;
     padding: 8px 12px;

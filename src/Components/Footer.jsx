@@ -20,7 +20,7 @@ const Footer = () => {
     return (
         <>
             <div className="max-w-6xl mx-auto">
-                <div className="grid grid-cols-3 gap-5 mt-5 py-10 border-t-[1px] border-b-[1px] border-black ">
+                <div className="grid grid-cols-3 gap-5 mt-5 py-10 border-t-[1px] border-b-[1px] border-gray-600 dark:border-gray-400 ">
                     <div>
                         <h3 className="font-bold">{header[language].about}</h3>
                         <p>{translations[language].home.contentabout}</p>
@@ -95,11 +95,14 @@ const Footer = () => {
                         </p>
                         <p className="whitespace-nowrap">Da Nang, Vietnam</p>
                         <img
-                            src={'./images/header/vn.png'}
-                            className="h-6 hidden md:block cursor-pointer"
+                            src={'/images/header/vn.png'}
+                            className="md:h-6 hidden md:block"
                             alt=""
                             onClick={() =>
-                                window.open('http://vnics.org.vn/Default.aspx?ctl=Introduce&aID=502', 'blank')
+                                window.open(
+                                    'https://baochinhphu.vn/thu-tuong-nam-2025-du-kien-quy-mo-kinh-te-viet-nam-tren-500-ty-usd-102250505112210409.htm',
+                                    'blank',
+                                )
                             }
                         />
                     </div>

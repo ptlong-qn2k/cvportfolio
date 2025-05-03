@@ -3,5 +3,6 @@ const enHome = {
     name: 'Pham Thanh Long',
     description: 'a Front-end Developer specializing in ReactJS',
     contentabout: 'A passionate front-end developer building modern web applications with the latest technologies.',
+    buttoncv: 'Download Cv',
 };
 export default enHome;

@@ -1,13 +1,15 @@
 import Layout from '../Layout/Layout';
 import { useLanguage } from '../Hook/Languagecontext';
 import { header, translations } from '../Locals/LanguageContent';
-// import '../Styles/App.css';
-
+import { fetchData } from '../Hook/FetchData';
+import { useState, useEffect } from 'react';
 const About = () => {
     const { language } = useLanguage();
+    // console.log('lang', language);
+
     return (
         <Layout>
-            <div className="max-w-5xl w-full justify-center px-5 pt-[10px]">
+            <div className="max-w-5xl w-full justify-center pt-[10px]">
                 <div className="text-center px-5">
                     <h2 className="text-4xl font-bold gradient-text ">{header[language].about}</h2>
                     <p>{translations[language].about.background.header}</p>
@@ -48,14 +50,22 @@ const About = () => {
                         </label>
                         <div className="border-l-4 border-slate-500 pl-3">
                             <h3 className="">{translations[language].about.education.content}</h3>
+                            <p>{translations[language].about.education.time}</p>
                         </div>
                     </div>
                     <div className="bg-white dark:bg-gray-800 p-5 rounded-xl">
                         <label htmlFor="Work experience" className="uppercase ">
                             {translations[language].about.experience.label}{' '}
                         </label>
-                        <div className="border-l-4 border-slate-500 pl-3">
-                            <h3></h3>
+                        <div className="space-y-5">
+                            {translations[language].about.experience.content.map((data, index) => (
+                                <div key={index} className="border-l-4 border-slate-500 pl-3">
+                                    <h3 className="font-bold">{data.title}</h3>
+                                    <h4>{data.company}</h4>
+                                    <h4>{data.time}</h4>
+                                    <p>{data.description}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -64,8 +74,11 @@ const About = () => {
                         {translations[language].about.hobbies.label}
                     </label>
                     <div className="flex flex-wrap gap-5">
-                        {translations?.[language]?.about?.hobbies?.content?.map((data, index) => (
-                            <p className="rounded-xl whitespace-nowrap bg-teal-200 px-1" key={index}>
+                        {translations?.[language]?.about?.hobbies?.content?.map((data, indexx) => (
+                            <p
+                                className="rounded-xl whitespace-nowrap bg-yellow-200 dark:bg-orange-400 px-1"
+                                key={indexx}
+                            >
                                 {data}
                             </p>
                         ))}

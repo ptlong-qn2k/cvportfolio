@@ -11,7 +11,7 @@ const Menutoogle = () => {
     const goToPage = (path) => navigate(`/${[language]}/${path}`);
     const toggleMenu = () => {
         setIsOpen(!isOpen);
-        console.log(isOpen);
+        // console.log(isOpen);
     };
     const handleClickOutside = (e) => {
         if (menuRef.current && !menuRef.current.contains(e.target)) {

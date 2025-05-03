@@ -1,7 +1,9 @@
 import React from 'react';
 import Layout from '../Layout/Layout';
-import { techstackIcon } from '../Components/Content';
+import { techstackIcon } from '../Locals/LanguageContent';
 import { CircularProgress, Typography, Box, colors } from '@mui/material';
+import { translations } from '../Locals/LanguageContent';
+import { useLanguage } from '../Hook/Languagecontext';
 
 const CircularSkill = ({ skill, value }) => {
     return (
@@ -25,20 +27,30 @@ const CircularSkill = ({ skill, value }) => {
         </Box>
     );
 };
+
 function TechStack() {
+    const { language } = useLanguage();
     return (
         <Layout>
-            <div className="flex justify-center my-5">
-                <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
-                    {techstackIcon.map((data, index) => (
-                        <div key={index} className="flex flex-col justify-center items-center">
-                            <div className="flex w-20 h-20 justify-center items-center mb-[-20px]">
-                                {React.cloneElement(data.icon, { className: `w-16 h-16 ${data.color}` })}
+            <div className="pt-[10px] px-5">
+                <div className="text-center px-5">
+                    <h2 className="text-4xl font-bold mb-1 gradient-text whitespace-nowrap ">
+                        {translations[language].techstack.title}
+                    </h2>
+                    <p>{translations[language].techstack.content}</p>
+                </div>
+                <div className="flex justify-center my-2">
+                    <div className="grid grid-cols-2 gap-5 mobile:grid-cols-3 sm:grid-cols-4 md:grid-cols-5">
+                        {techstackIcon.map((data, index) => (
+                            <div key={index} className="flex flex-col justify-center items-center">
+                                <div className="flex w-20 h-20 justify-center items-center mb-[-20px]">
+                                    {React.cloneElement(data.icon, { className: `w-16 h-16 ${data.color}` })}
+                                </div>
+                                {/* <h3 className="text-xl">{data.title}</h3> */}
+                                <CircularSkill skill={data.title} value={data.value} />
                             </div>
-                            {/* <h3 className="text-xl">{data.title}</h3> */}
-                            <CircularSkill skill={data.title} value={data.value} />
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
         </Layout>

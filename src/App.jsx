@@ -1,5 +1,5 @@
 import './Styles/App.css';
-import { Routes, Route, useParams, Navigate } from 'react-router-dom';
+import { Routes, Route, useParams, Navigate, useLocation } from 'react-router-dom';
 import { Homepage } from './Homepage';
 import About from './Pages/About';
 import TechStack from './Pages/TechStack';
@@ -10,19 +10,23 @@ import { LanguageProvider } from './Hook/Languagecontext';
 import { ThemeProvider } from './Hook/ThemeContext';
 import ScrollToTop from './Hook/ScrollToTop';
 import NotFound from './Pages/NotFound';
+import LanguageRedirect from './Hook/LanguagRedirect';
 function App() {
+    const defaultLanguage = 'en';
+
     return (
         <LanguageProvider>
             <ThemeProvider>
+                <LanguageRedirect />
                 <ScrollToTop />
                 <Routes>
-                    <Route path="/" element={<Navigate to="/en" replace />} />
-                    <Route path="/:lang" element={<Homepage />}></Route>
-                    <Route path="/:lang/about" element={<About />}></Route>
-                    <Route path="/:lang/techstack" element={<TechStack />}></Route>
-                    <Route path="/:lang/contact" element={<Contact />}></Route>
-                    <Route path="/:lang/project" element={<Projects />}></Route>
-                    <Route path="/:lang/login" element={<Login />}></Route>
+                    <Route path="/" element={<Navigate to={`/${defaultLanguage}`} replace />} />
+                    <Route path="/:lang" element={<Homepage />} />
+                    <Route path="/:lang/about" element={<About />} />
+                    <Route path="/:lang/techstack" element={<TechStack />} />
+                    <Route path="/:lang/contact" element={<Contact />} />
+                    <Route path="/:lang/project" element={<Projects />} />
+                    <Route path="/:lang/login" element={<Login />} />
                     {/* Bắt tất cả route không khớp => NotFound */}
                     <Route path="*" element={<NotFound />} />
                 </Routes>

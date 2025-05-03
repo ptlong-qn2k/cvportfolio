@@ -27,10 +27,14 @@ function Header() {
     };
     //dùng kiểm tra ngôn ngữ khi nhập link
     useEffect(() => {
-        const langFromUrl = location.pathname.split('/')[1];
-        // console.log(langFromUrl);
-        if (langFromUrl && langFromUrl !== language) {
-            toggleLanguage(langFromUrl);
+        try {
+            const langFromUrl = location.pathname.split('/')[1];
+            // console.log(langFromUrl);
+            if (langFromUrl && langFromUrl === 'en') {
+                toggleLanguage('en');
+            } else toggleLanguage('vi');
+        } catch {
+            console.log('kiem tra ngon ngu: header');
         }
     }, [location.pathname, language, toggleLanguage]);
 
@@ -43,8 +47,10 @@ function Header() {
         }
         // const segments = location.pathname.split('/').filter(Boolean);
         // const rest = segments.slice(1); // bỏ langCode hiện tại (ở index 0)
+        //giữ nguyên trang khi thay đổi ngôn ngữ
         const [, ...rest] = location.pathname.split('/').filter(Boolean);
         const newPath = `/${langCode}${rest.length ? '/' + rest.join('/') : ''}`;
+        // console.log('path', newPath);
         navigate(newPath);
     };
 
