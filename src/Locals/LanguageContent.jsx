@@ -60,7 +60,7 @@ export const techstackIcon = [
     { title: 'tailwind', icon: <SiTailwindcss />, color: 'text-[#44A8B3]', value: '80' },
     { title: 'sass', icon: <FaSass />, color: 'text-[#CD6799]', value: '75' },
     { title: 'git', icon: <FaGitAlt />, color: 'text-[#DE4C36]', value: '70' },
-    { title: 'visualcode', icon: <BiLogoVisualStudio />, color: 'text-[#1F9CF0]', value: '65' },
+    { title: 'visualcode', icon: <BiLogoVisualStudio />, color: 'text-[#1F9CF0]', value: '75' },
     { title: 'github', icon: <FaGithub />, color: 'text-black', value: '60' },
     // { title: 'vite', icon: <img src="/vite.svg" alt="Vite" />, value: '80' },
     { title: 'material-UI', icon: <img src="/materialui.svg" alt="mui" />, color: '', value: '55' },

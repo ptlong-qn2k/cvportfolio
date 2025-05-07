@@ -13,6 +13,7 @@ import { Schema } from '../Components/Common/Schema';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 function Contact() {
+    const { language } = useLanguage();
     const {
         register,
         handleSubmit,
@@ -32,20 +33,18 @@ function Contact() {
             const result = await response.json();
 
             if (result.success) {
-                // 🟢 Hiển thị modal thông báo thành công
                 Swal.fire({
                     title: '🎉 Message Sent!',
-                    text: 'thank you very much',
+                    text: `${translations[language].contact.content.successMessage}`,
                     icon: 'success',
                     confirmButtonColor: '#3085d6',
                 });
 
                 reset(); // Xóa dữ liệu form sau khi gửi thành công
             } else {
-                // 🔴 Hiển thị modal khi lỗi xảy ra
                 Swal.fire({
                     title: '❌ Error!',
-                    text: 'Message not sent. Please try again.',
+                    text: `${translations[language].contact.content.errorMessage}`,
                     icon: 'error',
                     confirmButtonColor: '#d33',
                 });
@@ -54,7 +53,6 @@ function Contact() {
             console.error('Error sending email:', error);
         }
     };
-    const { language } = useLanguage();
     //Hàm hiển thị tất cả các lỗi validate
     const renderFieldErrors = (fieldErrors) => {
         if (!fieldErrors) return null;

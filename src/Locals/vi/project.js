@@ -24,7 +24,7 @@ const viProject = {
             ],
             techstask: 'HTML5, CSS3, Javascript ES6+, React, Tailwind, Material-UI',
             vercel: 'https://project1-responsive-ptl.vercel.app/',
-            github: 'https://github.com/ptlong-qn2k/project1-responsive',
+            github: 'https://github.com/ptlong-qn2k/project1-react',
             scroll: 'false',
         },
         {

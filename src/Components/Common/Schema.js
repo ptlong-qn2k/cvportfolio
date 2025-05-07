@@ -1,6 +1,20 @@
 import * as yup from 'yup';
 
-export const Schema = yup.object({
+export const Schema = yup.object().shape({
+    email: yup
+        .string()
+        .required('Email is required')
+        .email('Invalid email format')
+        .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 'Invalid email format'),
+
+    fullName: yup
+        .string()
+        .required('Full name is required')
+        .matches(/^[\p{L}\s]+$/u, 'Full name must contain only letters'),
+    contentforme: yup.string().required('send me message'),
+});
+
+export const Schema2 = yup.object().shape({
     username: yup
         .string()
         .required('Username is required')
@@ -30,7 +44,7 @@ export const Schema = yup.object({
     fullName: yup
         .string()
         .required('Full name is required')
-        .matches(/^[A-Za-z\s]+$/, 'Full name must contain only letters'),
+        .matches(/^[\p{L}\s]+$/u, 'Full name must contain only letters'),
 
     age: yup
         .number()

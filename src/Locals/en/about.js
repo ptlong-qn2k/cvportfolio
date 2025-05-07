@@ -26,7 +26,7 @@ const enAbout = {
                 company: 'Freelancer',
                 time: '2024 - 2025',
                 description:
-                    'Developed and maintained web applications with Javascript, React, Tailwind. Collaborated closely with the design and back-end teams.',
+                    'Developed and maintained web applications with Javascript, React, Tailwind. Experienced in working with design and back-end teams.',
             },
             {
                 title: 'Front-End Developer',

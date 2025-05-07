@@ -9,6 +9,7 @@ const enContact = {
         messagePlaceholder: 'Your Message',
         sendButton: 'Send Message',
         successMessage: 'Your message has been sent successfully!',
+        thanks: 'thank you very much',
         errorMessage: 'An error occurred while sending the message. Please try again.',
     },
     contactDetails: {

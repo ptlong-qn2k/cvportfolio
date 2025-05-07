@@ -23,7 +23,7 @@ const viAbout = {
                 company: 'Freelancer',
                 time: '2024 - 2025',
                 description:
-                    'Phát triển và duy trì các ứng dụng web với JavaScript, React, Tailwind, Material-UI. Hợp tác chặt chẽ với đội ngũ thiết kế và back-end.',
+                    'Phát triển và duy trì các ứng dụng web với JavaScript, React, Tailwind, Material-UI. Có kinh nghiệm làm việc với đội ngũ thiết kế và back-end.',
             },
             {
                 title: 'Lập trình viên Front-End',
