@@ -58,30 +58,30 @@ function Contact() {
         if (!fieldErrors) return null;
         if (fieldErrors.types) {
             return Object.values(fieldErrors.types).map((msg, i) => (
-                <p key={i} className="text-red-500 text-sm">
+                <p key={i} className="text-sm text-red-500">
                     {msg}
                 </p>
             ));
         }
-        return <p className="text-red-500 text-sm">{fieldErrors.message}</p>;
+        return <p className="text-sm text-red-500">{fieldErrors.message}</p>;
     };
     return (
         <Layout>
-            <div className="flex flex-col max-w-6xl pt-[10px]">
-                <h2 className="text-4xl font-bold mx-auto mb-4 gradient-text capitalize">
+            <div className="flex max-w-6xl flex-col pt-[10px]">
+                <h2 className="gradient-text mx-auto mb-4 text-4xl font-bold capitalize">
                     {translations[language].contact.title}
                 </h2>
-                <div className=" flex flex-col md:grid md:grid-cols-2 gap-8">
+                <div className="flex flex-col gap-8 md:grid md:grid-cols-2">
                     <div className="space-y-8">
-                        <div className="rounded-lg bg-white md:grid-cols-1 md:grid-rows-1 dark:bg-gray-800 p-5 sm:p-6 md:p-8  shadow-gray-500 shadow-lg ">
-                            <h3 className="text-2xl font-bold mb-4">
+                        <div className="rounded-lg bg-white p-5 shadow-lg shadow-gray-500 dark:bg-gray-800 sm:p-6 md:grid-cols-1 md:grid-rows-1 md:p-8">
+                            <h3 className="mb-4 text-2xl font-bold">
                                 {translations[language].contact.content.contactInfo}
                             </h3>
                             <div className="flex flex-col justify-start space-y-8">
-                                <div className="flex flex-row gap-2 items-center">
-                                    <div className="p-2 sm:p-3 bg-blue-200 dark:bg-blue-600 rounded-[50%] flex ">
+                                <div className="flex flex-row items-center gap-2">
+                                    <div className="flex rounded-[50%] bg-blue-200 p-2 dark:bg-blue-600 sm:p-3">
                                         <MdOutlineEmail
-                                            className="text-xanhduong m-auto dark:text-gray-300"
+                                            className="m-auto text-xanhduong dark:text-gray-300"
                                             size={20}
                                         />
                                     </div>
@@ -94,11 +94,11 @@ function Contact() {
                                         </a>
                                     </div>
                                 </div>
-                                <div className="flex flex-row gap-2 items-center">
-                                    <div className="p-2 sm:p-3 bg-green-200 dark:bg-green-600 rounded-[50%] flex ">
-                                        <IoCallOutline className="text-xanhla dark:text-gray-300 m-auto" size={20} />
+                                <div className="flex flex-row items-center gap-2">
+                                    <div className="flex rounded-[50%] bg-green-200 p-2 dark:bg-green-600 sm:p-3">
+                                        <IoCallOutline className="m-auto text-xanhla dark:text-gray-300" size={20} />
                                     </div>
-                                    <div className="flex flex-col ">
+                                    <div className="flex flex-col">
                                         <label htmlFor="">
                                             {translations[language].contact.contactDetails.phoneLabel}
                                         </label>
@@ -107,9 +107,9 @@ function Contact() {
                                         </a>
                                     </div>
                                 </div>
-                                <div className="flex flex-row gap-2 items-center">
-                                    <div className="p-2 sm:p-3 bg-orange-200 dark:bg-orange-600 rounded-[50%] flex">
-                                        <FaMapMarkerAlt className="text-maucam dark:text-gray-300 m-auto" size={20} />
+                                <div className="flex flex-row items-center gap-2">
+                                    <div className="flex rounded-[50%] bg-orange-200 p-2 dark:bg-orange-600 sm:p-3">
+                                        <FaMapMarkerAlt className="m-auto text-maucam dark:text-gray-300" size={20} />
                                     </div>
                                     <div className="flex flex-col">
                                         <label htmlFor="">
@@ -122,20 +122,20 @@ function Contact() {
                                 </div>
                             </div>
                         </div>
-                        <div className=" rounded-lg bg-white md:grid-cols-1 md:grid-rows-2 dark:bg-gray-800 p-5 sm:p-6 md:p-8 space-y-6 shadow-gray-500 shadow-lg ">
+                        <div className="space-y-6 rounded-lg bg-white p-5 shadow-lg shadow-gray-500 dark:bg-gray-800 sm:p-6 md:grid-cols-1 md:grid-rows-2 md:p-8">
                             <h3 className="text-2xl font-bold">{translations[language].contact.content.connect}</h3>
                             <div>
-                                <div className="cursor-pointer gap-2 flex flex-row justify-start">
-                                    <div className="p-2 sm:p-3 card-hover bg-blue-200 dark:bg-blue-600 !rounded-[50%] flex">
+                                <div className="flex cursor-pointer flex-row justify-start gap-2">
+                                    <div className="card-hover flex !rounded-[50%] bg-blue-200 p-2 dark:bg-blue-600 sm:p-3">
                                         <FaFacebook
                                             onClick={() =>
                                                 (window.location.href = 'https://www.facebook.com/mrlong2k/')
                                             }
-                                            className=" text-blue-600 dark:text-gray-300"
+                                            className="text-blue-600 dark:text-gray-300"
                                             size={20}
                                         />
                                     </div>
-                                    <div className="p-2 sm:p-3 card-hover bg-gray-200 dark:bg-gray-900 !rounded-[50%] flex">
+                                    <div className="card-hover flex !rounded-[50%] bg-gray-200 p-2 dark:bg-gray-900 sm:p-3">
                                         <FaGithub
                                             onClick={() => (window.location.href = 'https://github.com/ptlong-qn2k')}
                                             className="text-black dark:text-gray-300"
@@ -146,8 +146,8 @@ function Contact() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col mx-auto bg-white p-5 sm:p-6 md:p-8 dark:bg-gray-800 shadow-gray-500 shadow-lg rounded-lg">
-                        <h2 className="text-4xl font-bold text-center mb-4 gradient-text capitalize">
+                    <div className="mx-auto flex flex-col rounded-lg bg-white p-5 shadow-lg shadow-gray-500 dark:bg-gray-800 sm:p-6 md:p-8">
+                        <h2 className="gradient-text mb-4 text-center text-4xl font-bold capitalize">
                             {translations[language].contact.content.form}
                         </h2>
                         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -156,7 +156,7 @@ function Contact() {
                                 type="text"
                                 placeholder={translations[language].contact.content.namePlaceholder}
                                 {...register('fullName')}
-                                className="w-full p-3 border rounded-lg bg-white dark:placeholder-white dark:bg-gray-800"
+                                className="w-full rounded-lg border bg-white p-3 dark:bg-gray-800 dark:placeholder-white"
                             />
                             {errors.fullName && <span className="text-red-500">{errors.fullName.message}</span>}
                             {/* {renderFieldErrors(errors.fullName)} //hiển thị tất cả các lỗi */}
@@ -165,20 +165,20 @@ function Contact() {
                                 type="email"
                                 placeholder={translations[language].contact.content.emailPlaceholder}
                                 {...register('email')}
-                                className="w-full p-3 border rounded-lg bg-white dark:placeholder-white dark:bg-gray-800"
+                                className="w-full rounded-lg border bg-white p-3 dark:bg-gray-800 dark:placeholder-white"
                             />
                             {errors.email && <span className="text-red-500">{errors.email.message}</span>}
                             {/* Message Input */}
                             <textarea
                                 placeholder={translations[language].contact.content.messagePlaceholder}
                                 {...register('contentforme')}
-                                className="w-full p-3 mb-5 border rounded-lg h-32 bg-white dark:placeholder-white dark:bg-gray-800"
+                                className="mb-5 h-32 w-full rounded-lg border bg-white p-3 dark:bg-gray-800 dark:placeholder-white"
                             />
                             {errors.contentforme && <span className="text-red-500">{errors.contentforme.message}</span>}
                             {/* Submit Button */}
                             <button
                                 type="submit"
-                                className="w-full card-hover bg-maucam text-white p-3 rounded-lg hover:bg-orange-600"
+                                className="card-hover w-full rounded-lg bg-maucam p-3 text-white hover:bg-orange-600"
                             >
                                 {translations[language].contact.content.sendButton}
                             </button>

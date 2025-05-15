@@ -34,26 +34,8 @@ export const translations = {
     },
 };
 
-export const header = {
-    en: {
-        home: 'home',
-        about: 'About me',
-        techstack: 'Tech Stack',
-        projects: 'Projects',
-        contact: 'Contact',
-        navigation: ['Navigation', 'Social'],
-    },
-    vi: {
-        home: 'Trang chủ',
-        about: 'Giới thiệu',
-        techstack: 'Công nghệ',
-        projects: 'Dự án',
-        contact: 'Liên hệ',
-        navigation: ['Điều hướng', 'Mạng xã hội'],
-    },
-};
 export const techstackIcon = [
-    { title: 'hrml', icon: <FaHtml5 />, color: 'text-[#E44F26]', value: '80' },
+    { title: 'html', icon: <FaHtml5 />, color: 'text-[#E44F26]', value: '80' },
     { title: 'css', icon: <FaCss3 />, color: 'text-[#1572B6]', value: '80' },
     { title: 'javascript', icon: <SiJavascript />, color: 'text-mauvang bg-black', value: '70' },
     { title: 'react', icon: <FaReact />, color: 'text-xanhduong bg-mauvang', value: '70' },

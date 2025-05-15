@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { header } from '../Content';
+import { translations } from '../../Locals/LanguageContent';
 import { IoMenu } from 'react-icons/io5';
 import { useLanguage } from '../../Hook/Languagecontext';
 import { useNavigate } from 'react-router-dom';
@@ -36,52 +37,52 @@ const Menutoogle = () => {
                 <IoMenu size={32} className="cursor-pointer bg-gray-200 dark:bg-gray-700" />
             </div>
             {isOpen && (
-                <div className="absolute top-full left-0 right-0 w-full rounded-md shadow-lg bg-white dark:bg-gray-800 z-50">
+                <div className="absolute left-0 right-0 top-full z-50 w-full rounded-md bg-white shadow-lg dark:bg-gray-800">
                     <ul className="flex flex-col text-black dark:text-white">
                         <li
-                            className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
+                            className="cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
                             onClick={() => {
                                 setIsOpen(false);
                                 navigate('/');
                             }}
                         >
-                            {header[language].home}
+                            {translations[language].header.home}
                         </li>
                         <li
-                            className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
+                            className="cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
                             onClick={() => {
                                 setIsOpen(false);
                                 goToPage('about');
                             }}
                         >
-                            {header[language].about}
+                            {translations[language].header.about}
                         </li>
                         <li
-                            className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
+                            className="cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
                             onClick={() => {
                                 setIsOpen(false);
                                 goToPage('techstack');
                             }}
                         >
-                            {header[language].techStack}
+                            {translations[language].header.techstack}
                         </li>
                         <li
-                            className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
+                            className="cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
                             onClick={() => {
                                 setIsOpen(false);
                                 goToPage('project');
                             }}
                         >
-                            {header[language].projects}
+                            {translations[language].header.projects}
                         </li>
                         <li
-                            className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
+                            className="cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
                             onClick={() => {
                                 setIsOpen(false);
                                 goToPage('contact');
                             }}
                         >
-                            {header[language].contact}
+                            {translations[language].header.contact}
                         </li>
                     </ul>
                 </div>

@@ -36,12 +36,12 @@ export default function ThemeToggle() {
     }, []);
 
     return (
-        <div ref={dropdownRef} className="text-lg card-hover relative">
-            <button onClick={() => setOpen(!open)} className="px-3 py-[2px] rounded-md bg-gray-200 dark:bg-gray-700">
+        <div ref={dropdownRef} className="card-hover relative text-lg">
+            <button onClick={() => setOpen(!open)} className="rounded-md bg-gray-200 px-3 py-[2px] dark:bg-gray-700">
                 {getLabel()}
             </button>
             {open && (
-                <div className="absolute mt-2 rounded-md shadow-lg bg-white dark:bg-gray-800 z-10">
+                <div className="absolute z-10 mt-2 rounded-md bg-white shadow-lg dark:bg-gray-800">
                     {options.map((option) => (
                         <div
                             key={option.value}

@@ -1,7 +1,7 @@
 const enHeader = {
-    home: 'home',
+    home: 'Home',
     about: 'About me',
-    techStack: 'Tech Stack',
+    techstack: 'Tech Stack',
     projects: 'Projects',
     contact: 'Contact',
     navigation: ['Navigation', 'Social'],

@@ -51,6 +51,35 @@ label {
         transform: rotate(360deg);
     }
 }
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-slide-in-left {
+    animation: slide-in-left 1s ease-out forwards;
+}
+
+.animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+}
 
 @media (prefers-reduced-motion: no-preference) {
     a:nth-of-type(2) .logo {
@@ -64,6 +93,9 @@ label {
 
 .read-the-docs {
     color: #888;
+}
+.bg-image-gradient {
+    background-image: linear-gradient(180deg, rgb(198, 76, 20), rgb(29, 16, 210));
 }
 .bg-soft-gradient {
     background: linear-gradient(135deg, #c3dafe, #e0c3fc);

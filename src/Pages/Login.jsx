@@ -44,21 +44,21 @@ function Login() {
         }
     };
     return (
-        <div className="flex flex-col items-center ">
-            <form onSubmit={handleSubmit(onsubmit)} className="flex flex-col gap-4 p-4 border rounded-md shadow-md">
+        <div className="flex flex-col items-center">
+            <form onSubmit={handleSubmit(onsubmit)} className="flex flex-col gap-4 rounded-md border p-4 shadow-md">
                 <label className="block">
                     Username:
-                    <input type="text" {...register('username')} className="border p-2 rounded-md w-full" />
+                    <input type="text" {...register('username')} className="w-full rounded-md border p-2" />
                     {errors.username && <p className="text-orange">{errors.username.message}</p>}
                 </label>
 
                 <label className="block">
                     Password:
-                    <input type="password" {...register('password')} className="border p-2 rounded-md w-full" />
+                    <input type="password" {...register('password')} className="w-full rounded-md border p-2" />
                     {errors.password && <p className="text-red-500">{errors.password.message}</p>}
                 </label>
 
-                <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md">
+                <button type="submit" className="rounded-md bg-blue-500 px-4 py-2 text-white">
                     Login
                 </button>
             </form>

@@ -1,29 +1,28 @@
 import Layout from '../Layout/Layout';
 import { useLanguage } from '../Hook/Languagecontext';
-import { header, translations } from '../Locals/LanguageContent';
-import { fetchData } from '../Hook/FetchData';
-import { useState, useEffect } from 'react';
+import { translations } from '../Locals/LanguageContent';
+
 const About = () => {
     const { language } = useLanguage();
     // console.log('lang', language);
 
     return (
         <Layout>
-            <div className="max-w-5xl w-full justify-center pt-[10px]">
-                <div className="text-center px-5">
-                    <h2 className="text-4xl font-bold gradient-text ">{header[language].about}</h2>
+            <div className="w-full max-w-5xl justify-center pt-[10px]">
+                <div className="px-5 text-center">
+                    <h2 className="gradient-text text-4xl font-bold">{translations[language].header.about}</h2>
                     <p>{translations[language].about.background.header}</p>
                 </div>
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-2xl md:flex md:flex-row mb-8">
-                    <div className="mobile:h-64 mobile:min-w-64 md:h-72 md:min-w-72 relative ">
-                        <img src="/images/background/ptl.png" alt="" className="w-full h-full object-cover" />
+                <div className="mb-8 rounded-2xl bg-white p-5 dark:bg-gray-800 md:flex md:flex-row">
+                    <div className="relative mobile:h-64 mobile:min-w-64 md:h-72 md:min-w-72">
+                        <img src="/images/background/ptl.png" alt="" className="h-full w-full object-cover" />
                     </div>
                     <div className="">
                         <div className="p-2 md:pl-5">
-                            <h3 className="text-xanhduong font-bold text-xl">
+                            <h3 className="text-xl font-bold text-xanhduong">
                                 {translations[language].about.background.apply}
                             </h3>
-                            <h3 className="font-bold text-3xl">{translations[language].home.name}</h3>
+                            <h3 className="text-3xl font-bold">{translations[language].home.name}</h3>
                             <h3>{translations[language].about.background.address}</h3>
                         </div>
                         <div className="relative">
@@ -43,8 +42,8 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w justify-between mb-8">
-                    <div className="bg-white dark:bg-gray-800 p-5 rounded-2xl ">
+                <div className="mb-8 grid grid-cols-1 justify-between gap-8 md:grid-cols-2">
+                    <div className="rounded-2xl bg-white p-5 dark:bg-gray-800">
                         <label htmlFor="Education" className="uppercase">
                             {translations[language].about.education.label}
                         </label>
@@ -53,8 +52,8 @@ const About = () => {
                             <p>{translations[language].about.education.time}</p>
                         </div>
                     </div>
-                    <div className="bg-white dark:bg-gray-800 p-5 rounded-xl">
-                        <label htmlFor="Work experience" className="uppercase ">
+                    <div className="rounded-xl bg-white p-5 dark:bg-gray-800">
+                        <label htmlFor="Work experience" className="uppercase">
                             {translations[language].about.experience.label}{' '}
                         </label>
                         <div className="space-y-5">
@@ -69,14 +68,14 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                <div className="bg-white dark:bg-gray-800 p-5 rounded-xl space-y-3">
+                <div className="space-y-3 rounded-xl bg-white p-5 dark:bg-gray-800">
                     <label htmlFor="Education" className="uppercase">
                         {translations[language].about.hobbies.label}
                     </label>
                     <div className="flex flex-wrap gap-5">
                         {translations?.[language]?.about?.hobbies?.content?.map((data, indexx) => (
                             <p
-                                className="rounded-xl whitespace-nowrap bg-yellow-200 dark:bg-orange-400 px-1"
+                                className="whitespace-nowrap rounded-xl bg-yellow-200 px-1 dark:bg-orange-400"
                                 key={indexx}
                             >
                                 {data}

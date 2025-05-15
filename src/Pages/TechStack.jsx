@@ -4,6 +4,7 @@ import { techstackIcon } from '../Locals/LanguageContent';
 import { CircularProgress, Typography, Box, colors } from '@mui/material';
 import { translations } from '../Locals/LanguageContent';
 import { useLanguage } from '../Hook/Languagecontext';
+import '../Styles/App.css';
 
 const CircularSkill = ({ skill, value }) => {
     return (
@@ -32,18 +33,25 @@ function TechStack() {
     const { language } = useLanguage();
     return (
         <Layout>
-            <div className="pt-[10px] px-5">
-                <div className="text-center px-5">
-                    <h2 className="text-4xl font-bold mb-1 gradient-text whitespace-nowrap ">
+            <div className="px-5 pt-[10px]">
+                <div className="mb-4 px-5 text-center">
+                    <h2 className="gradient-text mb-1 whitespace-nowrap text-4xl font-bold">
                         {translations[language].techstack.title}
                     </h2>
-                    <p>{translations[language].techstack.content}</p>
+                    <ul className="max-w-2xl list-decimal text-justify">
+                        {translations?.[language]?.techstack?.description?.map((data, index) => {
+                            return <li key={index}>{data}</li>;
+                        })}
+                    </ul>
                 </div>
-                <div className="flex justify-center my-2">
+                <h2 className="text-center text-xl font-bold dark:text-pink-800">
+                    {translations[language].techstack.content}
+                </h2>
+                <div className="my-2 flex justify-center">
                     <div className="grid grid-cols-2 gap-5 mobile:grid-cols-3 sm:grid-cols-4 md:grid-cols-5">
                         {techstackIcon.map((data, index) => (
-                            <div key={index} className="flex flex-col justify-center items-center">
-                                <div className="flex w-20 h-20 justify-center items-center mb-[-20px]">
+                            <div key={index} className="flex flex-col items-center justify-center">
+                                <div className="mb-[-20px] flex h-20 w-20 items-center justify-center">
                                     {React.cloneElement(data.icon, { className: `w-16 h-16 ${data.color}` })}
                                 </div>
                                 {/* <h3 className="text-xl">{data.title}</h3> */}
